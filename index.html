@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Hangman</h1>
+            <h3>Welcome
+                <input type="text" id="name">
+                <button class="name-btn" onclick="
+                let nameField = document.getElementById('name'); 
+                let name = nameField.value.trim(); 
+                if (name == '') {
+                    return;
+                }
+                this.remove(); 
+                nameField.remove(); 
+                document.querySelector('.header > h3').textContent += ` ${name}`;
+                ">Choose Name</button>
+            </h3>
+        </div>
+        <div class="diff-container">
+            <h5 class="diff-head">Difficulty</h5>
+            <button class="diff-btn">1</button>
+            <button class="diff-btn">2</button>
+            <button class="diff-btn">3</button>
+        </div>
+        <div class="body-container">
+            <div class="stick" id="stick-1"></div>
+            <div class="stick" id="stick-2"></div>
+            <div class="stick" id="stick-3"></div>
+            <div class="circle"></div>
+            <div class="stick-body">
+                <div class="center-stick"></div>
+                <div class="righthand"></div>
+                <div class="lefthand"></div>
+                <div class="righthand"></div>
+                <div class="lefthand"></div>
+            </div>
+        </div>
+        <div class="word-container">
+            <div class="char">1</div>
+            <div class="char">2</div>
+            <div class="char">3</div>
+            <div class="char">4</div>
+            <div class="char">5</div>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
