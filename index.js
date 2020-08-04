@@ -10,12 +10,6 @@
     return chosenWord;
   }
 
-  function clearChildren(element) {
-    element.childNodes.forEach((d) => {
-      element.removeChild(d);
-    });
-  }
-
   function saveName(nameField, header, submitBtn) {
     let name = nameField.value.trim();
     if (name == '') {
@@ -45,7 +39,7 @@
   }
 
   function loadWord(wordList, diff, wordDiv) {
-    clearChildren(wordDiv);
+    wordDiv.innerHTML = '';
     let cword = selectWord(wordList, diff);
     console.log(cword);
     for (let i in cword) {
@@ -84,12 +78,12 @@
     let charDivs = document.querySelectorAll('.word-container > .char');
     for (let charDiv of charDivs) {
       if (charDiv.textContent == char) {
-        console.log(`char ${char} should be unhidden for the word`);
+        console.log(`char ${char} should be unhidden for the ${chosenWord}`);
         charDiv.unhide();
       }
     }
     checkedLetters.push(char);
-    checkWord(charDivs, chosenWord, words);
+    if (checkWord(charDivs, chosenWord, words)) showWinning();
   }
 
   function showLoss() {
