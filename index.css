@@ -14,17 +14,6 @@ body {
 }
 
 .word-container-wrapper {
-    /* position: absolute;
-    bottom: 0;
-    right: 0;
-    display: inline-block;
-    width: 93%;
-    height: 15vh;
-    margin: auto;
-    border-radius: 10px;
-    border: 3px solid #2CDA9D;
-    padding: 20px;
-    padding-top: 10px; */
     border-radius: 15px;
     border: 3px solid #2CDA9D;
     display:inline-block;
@@ -37,8 +26,8 @@ body {
 }
 
 .word-container {
-    /* position: absolute; */
-    padding: 50px;
+    padding: 0px 50px 0px 50px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,4 +180,21 @@ body {
 #name-btn:hover {
     background: lightblue;
     cursor: pointer;
+}
+
+.wl-header {
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.win {
+    color: greenyellow;
+    visibility: visible;
+}
+
+.lose {
+    color: crimson;
+    visibility: visible;
 }

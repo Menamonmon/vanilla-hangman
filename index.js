@@ -87,11 +87,15 @@
   }
 
   function showLoss() {
-    console.log("You Lost");
+    let lossHeader = document.querySelector('.wl-header');
+    lossHeader.textContent = 'You Lost';
+    lossHeader.className = "wl-header lose";
   }
 
   function showWinning() {
-    console.log("You Won");
+    let winningHeader = document.querySelector('.wl-header');
+    winningHeader.textContent = 'You Won';
+    winningHeader.className = "wl-header win";
   }
 
   function checkWord(divs, word, wordList) {
