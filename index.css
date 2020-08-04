@@ -13,15 +13,32 @@ body {
     margin-bottom: 3px;
 }
 
-.word-container {
-    position: absolute;
+.word-container-wrapper {
+    /* position: absolute;
     bottom: 0;
-    width: 90.5%;
-    height: 10%;
-    margin: 10px auto;
+    right: 0;
+    display: inline-block;
+    width: 93%;
+    height: 15vh;
+    margin: auto;
     border-radius: 10px;
     border: 3px solid #2CDA9D;
     padding: 20px;
+    padding-top: 10px; */
+    border-radius: 15px;
+    border: 3px solid #2CDA9D;
+    display:inline-block;
+    margin: auto;
+    margin-top: 30px;
+    width: 99%;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.word-container {
+    /* position: absolute; */
+    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,6 +53,10 @@ body {
     color: #1A181B;
 }
 
+.char-hidden {
+    user-select: none;
+}
+
 .char-hidden > div {
     opacity: 0;
 }
@@ -47,7 +68,6 @@ body {
 .body-container {
     border-radius: 15px;
     border: 3px solid #2CDA9D;
-    /* display: inline-block; */
     display:inline-block;
     margin: auto;
     width: 99%;
@@ -163,12 +183,12 @@ body {
     background: lightblue;
 }
 
-.name-btn {
+#name-btn {
     background: #2CDA9D;
     border: none;
 }
 
-.name-btn:hover {
+#name-btn:hover {
     background: lightblue;
     cursor: pointer;
 }
