@@ -1,5 +1,6 @@
 (() => {
   function selectWord(words, diff = 1) {
+    // this function selects a random word from the words array given a difficutly value between 1 - 3 
     if (diff > 3 || diff < 1) {
       throw new Error("Invalid Difficulty Value");
     }
@@ -10,6 +11,9 @@
   }
 
   function saveName(nameField, header, submitBtn) {
+    // this function would be used by the name field in the header and the submit button for it
+
+    // it captures the name, addes it to the header and then deletes the nameField and the submitBtn
     let name = nameField.value.trim();
     if (name == '') {
       return;
@@ -20,6 +24,9 @@
   }
 
   function makeCharEl(char, hidden = false) {
+    // this funtion constructs a char div that has the appropirate styling for a char element
+    // it also gives the char and additional function unide which would show the char div by changing its class name
+    // it accepts the argument hidden which determines whether the char div would be hidden be defualt
     if (char.length > 1) {
       throw new Error("Invalid Char length");
     }
@@ -38,6 +45,9 @@
   }
 
   function loadWord(wordList, diff, wordDiv) {
+    // this function clears the div where the chars of the mystery word are located 
+    // , selects a word and displays its chars in a hidden state 
+    // and then it returns the selected word.
     wordDiv.innerHTML = '';
     let cword = selectWord(wordList, diff);
     console.log(cword);
@@ -48,6 +58,8 @@
   }
 
   function updateDiff(clickedBtn, diffBtns) {
+    // a function that updates the difficulty level in the sript and
+    // highlights the chosen difficulty value
     diffBtns.forEach((button) => {
       button.className = "diff-btn";
     });
@@ -86,6 +98,9 @@
   }
 
   function showLoss() {
+    // a function that displays a message for the player that he had lost and
+    // shows the restrart button for restarting the game
+
     let lossHeader = document.querySelector('.wl-header');
     let restartBtn = document.querySelector(".restart-btn");
     lossHeader.textContent = 'You lost. Press the button above to take another try for a different word.';
@@ -100,6 +115,9 @@
   }
 
   function showWinning() {
+    // this function displays the winning message for the player for guessing the word correctly 
+    // and displays the next button that will change the cWord var to the next word.
+
     let winningHeader = document.querySelector('.wl-header');
     let restartBtn = document.querySelector(".restart-btn");
     winningHeader.textContent = 'You Won. Press the next button above for the next word.';
@@ -142,6 +160,8 @@
   }
 
   function bindKeysToLetters(lettersArray, mImg) {
+    // a function that adds events listeners for all of the characters keystrokes
+    // so that they have the same effect as pressing the button for their corresponding letters on the screen
     let body = document.body;
     for (let i = 65; i < 91; i++) {
       body.addEventListener('keyup', (e) => {
